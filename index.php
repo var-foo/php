@@ -36,7 +36,30 @@
 		</form>
 	</div>
 	<?php 
-			
+		// define an array
+		$pasta = array('spaghetti', 'penne', 'macaroni'); 
+		
+		// take an element off the top 
+		array_shift($pasta); 
+		
+		print_r($pasta); 
+		//put an item to the front of the array
+		array_unshift($pasta, 'spaghetti');
+		
+		print_r($pasta);
+		
+		//takes a string and turns it into an array:
+		$str = 'one|two|three|four|five';
+		$numbers = explode('|', $str);
+		
+		//sorts alphabetically (or numerically)
+		sort($numbers);
+		print_r($numbers);
+		
+		//sorts reverse alpahnumeric
+		rsort($numbers);
+		print_r($numbers);
+
 	?>
 </body>
 </html>
