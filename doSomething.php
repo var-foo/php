@@ -27,6 +27,9 @@
 		case 5:
 			$message = "Heartburn City!";
 			break;
+		default:
+			$message = "Stuff";
+			break;
 	}
 	$pizzaToppings = array('onion', 'tomato', 'cheese', 'anchovies', 'ham', 'pepperoni');
 	
