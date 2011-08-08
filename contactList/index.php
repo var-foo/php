@@ -61,6 +61,4 @@
 	makeTables("assets/list.txt");
 	
 ?>
-
-
 <?php include('../includes/footer.php'); ?>

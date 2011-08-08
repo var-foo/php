@@ -129,4 +129,25 @@
 		    } 
 		} 
 	?> 
+	
+	<h2>Passing variables by reference and value</h2>
+	
+	<?php 
+
+		// create a variable 
+		$today = "Saturday"; 
+		
+		// function to print the value of the variable 
+		function setDay(&$day) { 
+		    $day = "Tuesday"; 
+		    print "It is $day inside the function<br />"; 
+		} 
+		
+		// call function 
+		setDay($today); 
+		
+		// print the value of the variable 
+		print "It is $today outside the function"; 
+		
+	?>
 <?php include('../includes/footer.php'); ?>
