@@ -1,7 +1,13 @@
 <!doctype html>
 <html>
 <head>
-	<title>doSomething</title>
+	<?php
+		// Create an array of page variables because this is faster
+		// than multiple variables for page stuff.
+		$page = array();
+		$page['title'] = 'Do Something';
+		$page['description'] = 'This page simply spits out a sentence based on the food item that was chosen on the simple index page.';
+	?>
 </head>
 <body>
 	<?php

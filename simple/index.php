@@ -3,6 +3,7 @@
 		// than multiple variables for page stuff.
 		$page = array();
 		$page['title'] = 'Simple Statements';
+		$page['description'] = 'These are simple php statement examples.';
 		
 		// include the header
 		include('header.php');
