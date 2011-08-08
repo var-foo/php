@@ -23,5 +23,49 @@
 	<input type="submit" value="Add" />
 </form>
 
+<?php
+	
+	function writeFiles(){
+		$file = 'assets/list.txt';
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone'];
+		
+		$fh = fopen($file, 'a');
+		
+		
+		fwrite($fh, $firstName."|".$lastName."|".$email."|".$phone."?".chr(13));	
+		
+		$info = file_get_contents($file);
+		
+		fclose($fh);
+		
+		return $info;
+		
+	}
+	writeFiles();
+	function makeTables($list){
+		$contacts = array();
+		foreach ($list as $l){
+			$arr = explode("|", $l);
+			$fn[] = trim($arr[0]);
+			$ln[] = trim($arr[1]);
+			$em[] = trim($arr[2]);
+			$ph[] = trim($arr[3]);
+		}
+		foreach($fn as $f){
+			echo $f;
+		}
+		foreach($ln as $l){
+			echo $l;
+		}
+	}
+	$fileCont = file("assets/list.txt");
+	
+	makeTables($fileCont);
+	
+?>
+
 
 <?php include('footer.php'); ?>
