@@ -5,7 +5,7 @@
 	$page['title'] = 'Functions';
 	$page['description'] = 'This is the functions index page. Basic functions will be listed here.';
 	// include the header
-	include('../simple/header.php');
+	include('../includes/header.php');
 ?>
 	<h2>Echo a string (and make it uppercase and lowercase</h2>
 	<?php
@@ -77,7 +77,6 @@
 		    // remove duplicates and return 
 		    return array_unique($root); 
 		} 
-		//echo '<br /><br /><p>'.$domains.'</p><br /><br />';
 		// read email addresses from a file into an array 
 		$fileContents = file("../simple/assets/emails.txt"); 
 		
@@ -124,4 +123,4 @@
 		
 	?>
 	
-<?php include('../simple/footer.php'); ?>
+<?php include('../includes/footer.php'); ?>

@@ -1,4 +1,4 @@
-<!doctype html>
+;<!doctype html>
 <html>
 <head>
 	<?php
@@ -7,6 +7,8 @@
 		$page = array();
 		$page['title'] = 'Do Something';
 		$page['description'] = 'This page simply spits out a sentence based on the food item that was chosen on the simple index page.';
+		include('../includes/header.php');
+		
 	?>
 </head>
 <body>
@@ -47,5 +49,4 @@
 	
 	?></p>
 		
-</body>
-</html>
+<?php include('../includes/footer.php'); ?>

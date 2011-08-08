@@ -6,7 +6,7 @@
 		$page['description'] = 'These are simple php statement examples.';
 		
 		// include the header
-		include('header.php');
+	include('../includes/header.php');
 	?>
 	<hgroup>
 		<h1>Form Tests:</h1>
@@ -129,4 +129,4 @@
 		    } 
 		} 
 	?> 
-<?php include('footer.php'); ?>
+<?php include('../includes/footer.php'); ?>

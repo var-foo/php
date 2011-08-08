@@ -5,7 +5,7 @@
 	$page['title'] = 'Contact List';
 	$page['description'] = 'This is a simple php script that captures your name, email, and phone number and adds it to a file, then generates a table from the file.';
 	// include the header
-	include('../simple/header.php');
+	include('../includes/header.php');
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	First Name:
@@ -35,7 +35,7 @@
 		$fh = fopen($file, 'a');
 		
 		
-		fwrite($fh, $firstName."|".$lastName."|".$email."|".$phone."?".chr(13));	
+		fwrite($fh, $firstName."|".$lastName."|".$email."|".$phone.chr(13).chr(10));	
 		
 		$info = file_get_contents($file);
 		
@@ -45,27 +45,22 @@
 		
 	}
 	writeFiles();
-	function makeTables($list){
-		$contacts = array();
-		foreach ($list as $l){
-			$arr = explode("|", $l);
-			$fn[] = trim($arr[0]);
-			$ln[] = trim($arr[1]);
-			$em[] = trim($arr[2]);
-			$ph[] = trim($arr[3]);
+	function makeTables($path){
+		$data = file($path);
+		echo "<table border='1'>\r\n<tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th></tr>\r\n";
+		foreach ($data as $line){
+			$arr = explode("|", $line);
+			echo "<tr>";
+			for($i = 0; $i < count($arr); $i++){
+				echo "<td>".$arr[$i]."</td>";
+			}
+			echo"</tr>";
 		}
-		foreach($fn as $f){
-			echo $f;
-		}
-		foreach($ln as $l){
-			echo $l;
-		}
+		echo "</table>";
 	}
-	$fileCont = file("assets/list.txt");
-	
-	makeTables($fileCont);
+	makeTables("assets/list.txt");
 	
 ?>
 
 
-<?php include('footer.php'); ?>
+<?php include('../includes/footer.php'); ?>
