@@ -70,10 +70,14 @@
 				// trim returns the index specified in the argument
 		        $domains[] = trim($arr[1]); 
 		    } 
+			foreach ($domains as $dom){
+				$name = explode('.', $dom);
+				$root[] = trim($name[0]);
+			}
 		    // remove duplicates and return 
-		    return array_unique($domains); 
+		    return array_unique($root); 
 		} 
-		
+		//echo '<br /><br /><p>'.$domains.'</p><br /><br />';
 		// read email addresses from a file into an array 
 		$fileContents = file("../simple/assets/emails.txt"); 
 		
@@ -81,8 +85,9 @@
 		$returnArray = getUniqueDomains($fileContents); 
 		
 		// process the return array 
-		foreach ($returnArray as $d) { 
-		    echo '<p>http://www.'.$d.'</p>';
+		foreach ($returnArray as $d) {
+			$href = 'http://www.'.$d.'.com';
+		    echo '<p><a href="'.$href.'">'.$d.'</a></p>';
 		} 
 		
 	?>

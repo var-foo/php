@@ -14,6 +14,7 @@
 	<div>
 		<p><a href="simple/index.php">Simple Statements</a></p>
 		<p><a href="functions/index.php">Functions</a></p>
+		<p><a href="contactList/index.php">Contact List</a></p>
 	</div>
 	
 	<?php
