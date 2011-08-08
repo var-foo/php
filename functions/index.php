@@ -84,7 +84,6 @@
 		foreach ($returnArray as $d) { 
 		    echo '<p>http://www.'.$d.'</p>';
 		} 
-
 		
 	?>
 	
