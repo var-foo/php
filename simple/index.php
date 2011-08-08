@@ -138,6 +138,7 @@
 		$today = "Saturday"; 
 		
 		// function to print the value of the variable 
+		// The '&' before the argument allows the $day to affect $today.
 		function setDay(&$day) { 
 		    $day = "Tuesday"; 
 		    print "It is $day inside the function<br />"; 

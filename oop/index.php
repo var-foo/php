@@ -11,14 +11,14 @@
 <?php
 
 //Create a class
-class Car{
+class Vehicle{
 	//define properties
 	public $make;
 	public $model;
 	public $color;
 	public $year;
-	//private $_runningState;
-	//private $_gasGauge;
+	private $_runningState;
+	private $_gasGauge;
 	
 	//Constructor to make sure every new car starts out turned off with a full tank of gas.
 	public function __construct(){
@@ -43,22 +43,22 @@ class Car{
 	public function callTowTruck(){
 		echo "The tow truck has been called. You owe him \$8,000!<br />";
 	}
-	public function driveCar($location){
+	private function driveCar($location){
 		if ($this->_runningState = true){
-			$this->_gasGauge -= 25;
+			$this->_gasGauge -= 20;
 			echo "You have arrived at ".$location.".<br />";
 			
-			switch($this->_gasGauge){
-				case 75:
+			switch($this->gasGauge){
+				case 90 || 80 || 70:
 					echo "You still have plenty of gas!<br />";
 					break;
-				case 50:
-					echo "You have a half-tank of gas left.<br />";
+				case 60 || 50 || 40:
+					echo "You have about a half-tank of gas left.<br />";
 					break;
-				case 25:
+				case 30 || 20 || 10:
 					echo "You are almost out of gas.<br />";
 					break;
-				case 0:
+				case ($this->gasGauge == 0):
 					echo "You are out of gas!<br />";
 					$this->callTowTruck();
 					$this->getGas();
@@ -79,24 +79,29 @@ class Car{
 	} 
 }
 
+//Now we're going to extend this class to include motorcycles
+class Motorcycle extends Car{
+	//put new properties and methods here	
+}
+
 ?>
 
 <?php
 	// Create a new car
-	$pickUp = new Car();
-	$pickUp->make = "Chevrolet";
-	$pickUp->model = "Silverado";
-	$pickUp->year = "1996";
-	$pickUp->color = "black";
+	$myCar = new Vehicle();
+	$myCar->make = "Chevrolet";
+	$myCar->model = "Silverado";
+	$myCar->year = "1996";
+	$myCar->color = "black";
 	// Do something with the car
-	$pickUp->startCar();
-	$pickUp->driveCar("home");
-	$pickUp->driveCar("work");
-	$pickUp->driveCar("Store");
-	$pickUp->getGas();
-	$pickUp->driveCar("home");
-	$pickUp->turnOffCar();
-	echo $pickUp->getCarInfo(); 
+	$myCar->startCar();
+	$myCar->driveCar("home");
+	$myCar->driveCar("work");
+	$myCar->driveCar("Store");
+	$myCar->getGas();
+	$myCar->driveCar("home");
+	$myCar->turnOffCar();
+	echo $myCar->getCarInfo(); 
 
 ?>
 
