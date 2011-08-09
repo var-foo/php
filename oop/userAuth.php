@@ -5,7 +5,10 @@
 class userAuth { 
     // define properties 
     public $username; 
-    private $passwd; 
+    private $passwd;
+	public $firstName;
+	public $lastName;
+	public $email; 
     private $passwdFile; 
     private $_resultCode; 
 
@@ -44,6 +47,9 @@ class userAuth {
                 // return 1 
                 if ($arr[1] == $this->passwd) { 
                     $this->_resultCode = 1; 
+					$this->firstName = $arr[2];
+					$this->lastName = $arr[3];
+					$this->email = $arr[4];
                     break; 
                 } 
                 // otherwise return 0 
@@ -51,7 +57,7 @@ class userAuth {
                     $this->_resultCode = 0; 
                     break; 
                 } 
-            } 
+            }
         } 
     } 
 // end class definition 

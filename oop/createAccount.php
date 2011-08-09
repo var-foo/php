@@ -25,9 +25,24 @@
 </form>
 
 <?php
-
-
-
+	
+	function writeFiles(){
+		$file = 'password.txt';
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+		$email = $_POST['email'];
+		
+		$fh = fopen($file, 'a');
+		
+		
+		fwrite($fh, $username.":".$password.":".$firstName.":".$lastName.":".$email.chr(13).chr(10));	
+		
+		fclose($fh);
+		
+	}
+	writeFiles();
 ?>
 
 <?php include('../includes/footer.php'); ?>

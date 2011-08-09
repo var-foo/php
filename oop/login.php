@@ -32,7 +32,7 @@
 	        break; 
 	     
 	    case 1: 
-	        echo "Welcome, ".$ua->username; 
+	        echo "Welcome, ".$ua->firstName; 
 	        break; 
 	}         
 ?>

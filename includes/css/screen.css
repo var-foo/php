@@ -2,3 +2,11 @@
  * Used:		Globally
  * Included in:	header.php
  */
+
+form{
+	margin-left:10px;
+}
+
+form span{
+	display:block;
+}
