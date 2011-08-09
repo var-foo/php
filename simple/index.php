@@ -6,7 +6,7 @@
 		$page['description'] = 'These are simple php statement examples.';
 		
 		// include the header
-		include('header.php');
+	include('../includes/header.php');
 	?>
 	<hgroup>
 		<h1>Form Tests:</h1>
@@ -129,4 +129,26 @@
 		    } 
 		} 
 	?> 
-<?php include('footer.php'); ?>
+	
+	<h2>Passing variables by reference and value</h2>
+	
+	<?php 
+
+		// create a variable 
+		$today = "Saturday"; 
+		
+		// function to print the value of the variable 
+		// The '&' before the argument allows the $day to affect $today.
+		function setDay(&$day) { 
+		    $day = "Tuesday"; 
+		    print "It is $day inside the function<br />"; 
+		} 
+		
+		// call function 
+		setDay($today); 
+		
+		// print the value of the variable 
+		print "It is $today outside the function"; 
+		
+	?>
+<?php include('../includes/footer.php'); ?>

@@ -7,6 +7,8 @@
 		$page = array();
 		$page['title'] = 'Generator';
 		$page['description'] = 'This page creates the number of divs and paragraphs specified in the simple index.';
+		include('../includes/header.php');
+		
 	?>
 </head>
 <body>
@@ -22,5 +24,4 @@
 			echo "</div>\r\n";
 		}
 	?>
-</body>
-</html>
+<?php include('../includes/footer.php'); ?>

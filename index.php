@@ -1,12 +1,12 @@
-	<?php
-		// Create an array of page variables because this is faster
-		// than multiple variables for page stuff.
-		$page = array();
-		$page['title'] = 'Hello World';
-		$page['description'] = 'This is the main index page.';
-		// include the header
-		include('simple/header.php');
-	?>
+<?php
+	// Create an array of page variables because this is faster
+	// than multiple variables for page stuff.
+	$page = array();
+	$page['title'] = 'Hello World';
+	$page['description'] = 'This is the main index page.';
+	// include the header
+	include('../includes/header.php');
+?>
 	<hgroup>
 		<h1>Index</h1>
 		<h2>Navigate to different projects from here</h2>
@@ -20,4 +20,4 @@
 	<?php
 	
 	?> 
-<?php include('simple/footer.php'); ?>
+<?php include('../includes/footer.php'); ?>
