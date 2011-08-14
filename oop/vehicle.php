@@ -32,6 +32,7 @@ class Vehicle{
 	}
 	public function callTowTruck(){
 		echo "The tow truck has been called. You owe him \$8,000!<br />";
+		$this->getGas();
 	}
 	public function driveCar($location){
 		if ($this->_runningState = true){
@@ -55,7 +56,6 @@ class Vehicle{
 					$this->_runningState = false;
 					echo "You are out of gas!<br />";
 					$this->callTowTruck();
-					$this->getGas();
 					break;
 				default:
 					echo "Your gas gauge is broken!";
